@@ -114,15 +114,15 @@ namespace CardGame
           int index_1, index_2;
           //Console.WriteLine("Filtering hand for Jack, Queen, and Kings."); FilterHand(p, D); Thread.Sleep(1000);
           Console.WriteLine("Cards Left in deck: " + D.cards.Count); Thread.Sleep(1000);
-          DisplayHandInOrder(p); Thread.Sleep(1000);
-          Console.WriteLine("Select two cards from the list to discard. "); Thread.Sleep(1000);
-          Console.Write("Card: "); index_1 = int.Parse(Console.ReadLine());
-          Console.Write("Card: "); index_2 = int.Parse(Console.ReadLine());
-          while ((p[index_1 - 1].Rank + p[index_2 - 1].Rank != 10))
+          DisplayHandInOrder(p); 
+          Console.WriteLine("Select two cards from the list to replace. "); 
+          Console.Write("Card1: "); index_1 = int.Parse(Console.ReadLine());
+          Console.Write("Card2: "); index_2 = int.Parse(Console.ReadLine());
+          while ((p[index_1 - 1].Rank + p[index_2 - 1].Rank != 10) || (index_1 == index_2))
           {
-            Console.WriteLine("The value of those cards do not add up to 10, pick again!");
-            Console.Write("Card: "); index_1 = int.Parse(Console.ReadLine());
-            Console.Write("Card: "); index_2 = int.Parse(Console.ReadLine());
+            Console.WriteLine("Invalid combination of cards. ");
+            Console.Write("Card1: "); index_1 = int.Parse(Console.ReadLine());
+            Console.Write("Card2: "); index_2 = int.Parse(Console.ReadLine());
           }
           p.RemoveAt(index_1 - 1);
           p.Insert(index_1 - 1, D.TopCard());
