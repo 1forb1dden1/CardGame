@@ -10,12 +10,17 @@ namespace CardGame
   {
     public static void Main(string[] args)
     {
-      Game game = new Game(); 
-      Deck deck = new Deck();
-      deck.Shuffle();
-      Player Player1 = new Player("Player1");
-      game.DealCards(deck, 10, Player1.hand);
-      game.GameSelectTwoCards(Player1.hand, deck);
+      System game = new System();
+/*      int choice = 0;
+      switch (choice)
+      {
+        case 1:
+          game.PlayEleven();
+          break;
+        case 2:
+          break;
+      }*/
+      game.PlayEleven();
     }
   }
 }

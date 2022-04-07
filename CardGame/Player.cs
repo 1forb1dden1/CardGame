@@ -8,11 +8,12 @@ namespace CardGame
 {
   internal class Player
   {
-    public List<Card> hand = new List<Card>();
-    public int handRank = 0;
-    public string name;
+    private List<Card> select = new List<Card>();
+    //private int selectRank = 0;
+    private string name;
     public Player(string name) { this.name = name; }
-    public int HandRank { get { return handRank; } set { handRank = value; } } // property
+    public List<Card> Select { get { return select; } set { select= value; } }
+    //public int SelectRank { get { return SelectRank; } set { SelectRank = value; } } // property
     public string Name { get { return name; } set { name = value; } }
 
   }
